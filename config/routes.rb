@@ -1,5 +1,6 @@
 ThirdProject::Application.routes.draw do
 
+
   resources :ideas
 
   resources :tags
@@ -7,6 +8,8 @@ ThirdProject::Application.routes.draw do
   resources :votes
 
   resources :comments
+
+  resources :ideas
 
 
   devise_for :users
