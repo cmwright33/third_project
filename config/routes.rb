@@ -1,4 +1,6 @@
 ThirdProject::Application.routes.draw do
+  resources :tags
+
   resources :votes
 
   resources :comments
