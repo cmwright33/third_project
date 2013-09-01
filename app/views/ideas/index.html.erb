@@ -12,32 +12,36 @@
                 <h2 style=" border-bottom: 1px solid #EEE; ">This is Idea Number:<%=idea.title%></h2>
                   <p><%=idea.content%></p>
                   <p><%=idea.tag%></p>
-                  <div id="comment1">
-                    <div class="row-fluid">
-                      <div class="span8 offset4" style="background-color:white;">
-                        <blockquote>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                          <small>idea.comment_id<cite title="Source Title">Source Title</cite></small>
-                        </blockquote>
-                      </div>
-                    </div>
-                  </div>
-                  <div id="comment2">
-                    <div class="row-fluid">
-                      <div class="span8 offset4" style="background-color:white;">
-                        <blockquote>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                          <small>Someone famous <cite title="Source Title">Source Title</cite></small>
-                        </blockquote>
-                      </div>
-                    </div>
-                  </div>
+
+                        <div id="comment1">
+                          <div class="row-fluid">
+                            <% @comments.first%>
+                            <div class="span8 offset4" style="background-color:white;">
+                              <blockquote>
+                                <p><%= @comments.first.content %></p>
+                                <small><cite title="Source Title">Source Title</cite></small>
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
+                          <div id="comment1">
+                          <div class="row-fluid">
+                            <% @comments.last%>
+                            <div class="span8 offset4" style="background-color:white;">
+                              <blockquote>
+                                <p><%= @comments.last.content %></p>
+                                <small><cite title="Source Title">Source Title</cite></small>
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
               </div>
             </div>
-            <% end %>
             <div class="row-fluid">
               <div class="span12"></div>
             </div>
+            <% end %>
+
             <div class="row-fluid">
               <div class="span12" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
                 <h2 style="border-bottom: 1px solid #EEE;">Idea 2</h2>
@@ -65,8 +69,7 @@
                               <button class="btn btn-mini" type="button">add comment</button>
                           </div>
                       </div>
-
-                    </div>
+                  </div>
               </div>
             </div>
         </div>
@@ -81,3 +84,8 @@
     </div>
   </div>
 </div>
+
+
+
+
+
