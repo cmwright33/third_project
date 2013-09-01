@@ -1,53 +1,23 @@
 <h1>Listing ideas</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Tag</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ideas.each do |idea| %>
-      <tr>
-        <td><%= idea.title %></td>
-        <td><%= idea.content %></td>
-        <td><%= idea.tag %></td>
-        <td><%= link_to 'Show', idea %></td>
-        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Idea', new_idea_path %>
-
-
-
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span12">
       <h1 style="background-color:yellow;">Andouille flank brisket shankle meatball pork belly. Pancetta prosciutto chuck meatball, meatloaf</h1>
       <div class="row-fluid">
         <div class="span7">
+           <% @ideas.each do |idea| %>
             <div class="row-fluid">
               <div class="span12" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
-                <h2 style=" border-bottom: 1px solid #EEE; ">Idea 1</h2>
-                  <p>Filet mignon shoulder swine, kielbasa ribeye capicola sausage hamburger pork chop tri-tip meatball corned beef. Pork filet mignon biltong cow, turducken short loin tenderloin beef. Capicola shoulder pastrami prosciutto. Turkey pastrami pig tail sirloin. Prosciutto frankfurter pork chop, pork hamburger pancetta meatloaf. Pancetta rump tail shoulder salami doner. Frankfurter tri-tip jerky swine fatback brisket ribeye drumstick boudin.</p>
+                <h2 style=" border-bottom: 1px solid #EEE; ">This is Idea Number:<%=idea.title%></h2>
+                  <p><%=idea.content%></p>
+                  <p><%=idea.tag%></p>
                   <div id="comment1">
                     <div class="row-fluid">
                       <div class="span8 offset4" style="background-color:white;">
                         <blockquote>
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                          <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+                          <small>idea.comment_id<cite title="Source Title">Source Title</cite></small>
                         </blockquote>
                       </div>
                     </div>
@@ -64,6 +34,7 @@
                   </div>
               </div>
             </div>
+            <% end %>
             <div class="row-fluid">
               <div class="span12"></div>
             </div>
