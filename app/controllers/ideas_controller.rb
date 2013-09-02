@@ -4,7 +4,7 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    @ideas = Idea.paginate(:page => params[:page], :per_page => 10)
     @comments = Comment.all
     respond_to do |format|
       format.html {}

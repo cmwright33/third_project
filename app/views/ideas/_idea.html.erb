@@ -1,35 +1,37 @@
-     <div class="row-fluid">
+      <div class="ideas">
+        <% @ideas.each do |idea| %>
+            <div class="row-fluid">
               <div class="span12" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
                 <h2 style=" border-bottom: 1px solid #EEE; ">This is Idea Number:<%=idea.title%></h2>
                   <p><%=idea.content%></p>
                   <p><%=idea.tag%></p>
+
+                  <div id="comment1">
+                    <div class="row-fluid">
+                      <% @comments.first%>
+                      <div class="span8 offset4" style="background-color:white;">
+                        <blockquote>
+                          <p><%= @comments.first.content %></p>
+                          <small><cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
+                    <div id="comment1">
+                    <div class="row-fluid">
+                      <% @comments.last%>
+                      <div class="span8 offset4" style="background-color:white;">
+                        <blockquote>
+                          <p><%= @comments.last.content %></p>
+                          <small><cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
-
-<script id="idea-template" type="text/javascript">
-    <div class="row-fluid">
-          <div id="idea-{{id}}"
-              <div class="span12" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
-                <h2 style=" border-bottom: 1px solid #EEE; ">This is Idea Number: {{id}}</h2>
-                  <p>{{content}}</p>
-                  <p>{{tag}}</p>
-                  <p><%=idea.content%></p>
-                  <p><%=idea.tag%></p>
-              </div>
+            <div class="row-fluid">
+              <div class="span12"></div>
             </div>
-</script>
-
-
- <script id="country-template" type="text/x-handlebars-template">
-      <div>
-        <p>
-          <span class="flag {{abbreviation}}"></span> {{country}} ({{abbreviation}})
-        </p>
-      </div>
-</script>
-
-<script id="data-template" type="text/x-handlebars-template">
-      {{#each data}}
-        {{> country}}
-      {{/each}}
-</script>
+            <% end %>
+        </div>

@@ -4,4 +4,5 @@ class Idea < ActiveRecord::Base
   has_many :votes
   has_and_belongs_to_many :tags
 
+  self.per_page = 10
 end
