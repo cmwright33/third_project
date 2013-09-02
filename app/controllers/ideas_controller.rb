@@ -1,53 +1,49 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
-  # GET /ideas
-  # GET /ideas.json
+  #all ideas
   def index
     @ideas = Idea.all
   end
 
-  # GET /ideas/1
-  # GET /ideas/1.json
-  def show
-  end
 
-  # GET /ideas/new
-  def new
-    @idea = Idea.new
-  end
 
-  # GET /ideas/1/edit
-  def edit
-  end
 
-  # POST /ideas
-  # POST /ideas.json
-  def create
-    @idea = Idea.new(idea_params)
+  #save new idea
+  def save
+    @idea = Idea.create(
+    title: params[:title],
+    content: params[:content]
+    )
+    @tag = Tag.create(name: params[:tag])
+    @idea.tags << @tag
+    @tag.ideas << @idea
+    @tag.save
+    @idea.save
+    current_user.ideas << @idea
+
 
     respond_to do |format|
-      if @idea.save
-        format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @idea }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @idea.errors, status: :unprocessable_entity }
-      end
+      format.json {render json: @idea}
     end
+
   end
+
+
+
+
+
 
   # PATCH/PUT /ideas/1
   # PATCH/PUT /ideas/1.json
   def update
+    @idea = Idea.find(params[:id])
+    @idea.comments << params[:content]
+    @idea.save
+    current_user.comments << params[:content]
+    current_user.save
     respond_to do |format|
-      if @idea.update(idea_params)
-        format.html { redirect_to @idea, notice: 'Idea was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @idea.errors, status: :unprocessable_entity }
-      end
+      format.json {render json: @idea}
     end
   end
 

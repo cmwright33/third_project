@@ -14,26 +14,25 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+
   end
 
   # GET /comments/1/edit
   def edit
   end
 
-  # POST /comments
-  # POST /comments.json
-  def create
-    @comment = Comment.new(comment_params)
 
+  #create a new comment and save it to an idea.
+  def create
+    @comment = Comment.create(content: params[:content])
+    current_user.comments << @comment
+    current_user.save
+
+    @idea = Idea.find(params[:ideaId])
+    @idea.comments << @comment
+    @idea.save
     respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @comment }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+      format.json {render json: @comment}
     end
   end
 

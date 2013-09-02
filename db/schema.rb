@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20130831212524) do
 
   create_table "comments", force: true do |t|
     t.string   "content"
+    t.integer  "user_id"
+    t.integer  "idea_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -25,7 +27,6 @@ ActiveRecord::Schema.define(version: 20130831212524) do
   create_table "ideas", force: true do |t|
     t.string   "title"
     t.text     "content"
-    t.string   "tag"
     t.integer  "user_id"
     t.integer  "comments_id"
     t.integer  "votes_id"
@@ -33,14 +34,13 @@ ActiveRecord::Schema.define(version: 20130831212524) do
     t.datetime "updated_at"
   end
 
-  create_table "ideas_tags_{:id=>false}", id: false, force: true do |t|
-    t.integer "ideas_tag_id",    null: false
-    t.integer "{:id=>false}_id", null: false
+  create_table "ideas_tags", id: false, force: true do |t|
     t.integer "idea_id"
     t.integer "tag_id"
   end
 
   create_table "tags", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 20130831212524) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "votes", force: true do |t|
+    t.integer  "idea_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

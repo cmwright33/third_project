@@ -5,4 +5,11 @@
 border: 1px solid black; /*Add 1px solid border, use any color you want*/
 }
 
+.ideaInputForm{
+  float:left;
+}
+
+.userIdeaClass{
+  float:left;
+}
 
