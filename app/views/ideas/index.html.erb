@@ -5,10 +5,12 @@
       <h1 style="background-color:yellow;">Andouille flank brisket shankle meatball pork belly. Pancetta prosciutto chuck meatball, meatloaf</h1>
       <div class="row-fluid">
         <div class="span7">
-          <%= render 'idea' %>
-           <div id="append_and_paginate">
-            <%= will_paginate @ideas %>
+          <div class="ideas">
+            <%= render 'idea' %>
           </div>
+
+            <%= will_paginate @ideas %>
+
         </div>
         <div class="span4" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
           <h3 style=" border-bottom: 1px solid #EEE;">Live Ideas</h3>
