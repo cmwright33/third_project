@@ -6,6 +6,11 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.all
     @comments = Comment.all
+    respond_to do |format|
+      format.html {}
+      format.json {render json: {ideas: @ideas}}
+      format.js {}
+    end
   end
 
   # GET /ideas/1
