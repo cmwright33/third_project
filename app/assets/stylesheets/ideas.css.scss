@@ -1,3 +1,29 @@
 // Place all the styles related to the Ideas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.accordion {
+  margin: 50px;
+  dt, dd {
+    padding: 10px;
+    border: 1px solid black;
+    border-bottom: 0;
+    &:last-of-type {
+      border-bottom: 1px solid black;
+    }
+    a {
+      display: black;
+      color: black;
+      font-weight: bold;
+    }
+  }
+  dd {
+    border-top: 0;
+    font-size: 12px;
+    &:last-of-type {
+      border-top: 1px solid white;
+      postion: relative;
+      top: -1px;
+    }
+  }
+}

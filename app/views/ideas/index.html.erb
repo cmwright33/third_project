@@ -7,10 +7,13 @@
       <div class="row-fluid">
         <div class="span7">
           <div class="ideas">
-            <%= render @ideas %>
+
+
+            <%=render @ideas %>
           </div>
           <%= will_paginate @ideas %>
         </div>
+
         <div class="span4" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
           <h3 style=" border-bottom: 1px solid #EEE;">Live Ideas</h3>
           <p>Andouille flank brisket shankle meatball pork belly. Pancetta prosciutto chuck meatball, meatloaf beef biltong. Rump t-bone fatback pork belly filet mignon. Capicola corned beef pork loin, leberkas meatloaf shoulder andouille. Fatback beef ribs strip steak andouille meatball boudin prosciutto rump salami sirloin bresaola filet mignon chuck leberkas shankle. Ball tip rump tri-tip beef short loin corned beef, kielbasa hamburger ham spare ribs. Turkey prosciutto flank fatback venison andouille turducken boudin strip steak bresaola drumstick t-bone ground round filet mignon.</p>
@@ -26,28 +29,36 @@
 
 
 
-<h1>Listing ideas</h1>
 
-  <ul>
-    <% @ideas.each do |idea| %>
-      <div id="<%= idea.id %>">
-        <li><%= idea.title %>(<%= idea.votes.count %>)</li>
-        <button id="vote_<%= idea.id %>" class="voteButton">Vote</button>
-          <ul>
-            <% idea.tags.each do |tag| %>
-            <li><%= tag.name %></li>
-          <% end %>
-          </ul>
-           <ol>
-          <% idea.comments.each do |comment| %>
-          <li>(<%= idea.votes.count %>)</li>
-          <% end %>
-        </ol>
-      Add comment: <input id="mainComment<%= idea.id %>" type="text" name="comment">
-      <button id="<%= idea.id * 2 %>" class="mainCommentButton">submit</button>
-      </div>
-    <% end %>
-  </ul>
+
+
+
+<dl class="accordion">
+
+  <dt><a href="">Panel 1</a></dt>
+  <dd id="thispanel">this is something</dd>
+
+
+  <dt><a href="">Panel 2</a></dt>
+  <dd id="thispanel">this is something</dd>
+
+
+  <dt><a href="">Panel 3</a></dt>
+  <dd id="thispanel">this is something</dd>
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

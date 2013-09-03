@@ -1,4 +1,4 @@
 
-$('#'+<%= @idea.id %>' li')[0].innerHTML('hello'));
 
-<%= @idea.title %>(<%=@idea.votes.count + 1%>
+// $('#'+<%= @idea.id %>+' li span')[0].innerHTML = <%= @idea.votes.count %>;
+$('#'+<%= @idea.id %>+' h3 span')[0].innerHTML = <%= @idea.votes.count %>;

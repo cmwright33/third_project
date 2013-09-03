@@ -1,37 +1,39 @@
-      <div id="<%=idea.id%>">
 
             <div class="row-fluid">
               <div class="span12" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
-                <h2 style=" border-bottom: 1px solid #EEE; ">This is Idea Number:<%=idea.title%>(<%= idea.votes.count %>)</h2>
-                  <p><%=idea.content%></p>
-                  <p><%=idea.tag%></p>
+              <ul>
+                  <div id="<%= idea.id %>">
+                    <h2 style="border-bottom: 1px solid #EEE; "><%=idea.title%></h2>
+                      <h3>(votes:<span><%= idea.votes.count %></span>)</h3>
+                       <% if @user_vote_ids.include?(idea.id) %>
+                          <% else %>
+                              <button id="vote_<%= idea.id %>" class="voteButton">Vote</button>
+                       <% end %>
+                      <ul>
+                        <li><%=idea.content%></li>
+                        <% idea.tags.each do |tag| %>
+                        <li><%= tag.name %></li>
+                      <% end %>
+                      </ul>
 
-                  <div id="comment-<%=@comments.first.id%>">
-                    <div class="row-fluid">
-                      <% idea.comments.each do |comment|%>
-                      <div class="span8 offset4" style="background-color:white;">
-                        <blockquote>
-                          <p><%= idea.comment.content %></p>
-                          <small><cite title="Source Title">Source Title</cite></small>
-                        </blockquote>
-                      </div>
-                    </div>
+
+                       <ol>
+
+                        <% idea.comments.each do |comment| %>
+                        <div class="span8 offset4" style="background-color:white; border: 1px solid black; border-radius:5px;">
+
+                          <li><%=comment.content%></li>
+                          <li><small><cite title="Source Title">--<%=comment.user.email%></cite></small></li>
+                        </div>
+                          <% end %>
+                       </ol>
+
+                  Add comment: <input id="mainComment<%= idea.id %>" type="text" name="comment">
+                  <button id="<%= idea.id * 2 %>" class="mainCommentButton">submit</button>
                   </div>
-                    <div id="comment-<%=@comments.last.id%>">
-                    <div class="row-fluid">
-                      <% @comments.last%>
-                      <div class="span8 offset4" style="background-color:white;">
-                        <blockquote>
-                          <p><%= @comments.last.content %></p>
-                          <small><cite title="Source Title">Source Title</cite></small>
-                        </blockquote>
-                      </div>
-                    </div>
-                  </div>
+                </ul>
               </div>
             </div>
-            <div class="row-fluid">
+             <div class="row-fluid">
               <div class="span12"></div>
             </div>
-
-        </div>

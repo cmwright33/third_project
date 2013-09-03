@@ -3,9 +3,12 @@ class IdeasController < ApplicationController
 
   #all ideas
   def index
-
     @ideas = Idea.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
-
+    @user = current_user
+    @user_vote_ids = [];
+    @user.votes.each do |vote|
+      @user_vote_ids << vote.idea_id
+    end
   end
 
 
