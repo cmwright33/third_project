@@ -1,4 +1,4 @@
-      <div class="idea">
+      <div class="idea-<%=idea.id%>">
 
             <div class="row-fluid">
               <div class="span12" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
@@ -6,7 +6,7 @@
                   <p><%=idea.content%></p>
                   <p><%=idea.tag%></p>
 
-                  <div id="comment1">
+                  <div id="comment-<%=@comments.first.id%>">
                     <div class="row-fluid">
                       <% @comments.first%>
                       <div class="span8 offset4" style="background-color:white;">
@@ -17,7 +17,7 @@
                       </div>
                     </div>
                   </div>
-                    <div id="comment1">
+                    <div id="comment-<%=@comments.last.id%>">
                     <div class="row-fluid">
                       <% @comments.last%>
                       <div class="span8 offset4" style="background-color:white;">
