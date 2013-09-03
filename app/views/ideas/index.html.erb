@@ -3,7 +3,8 @@
   <ul>
     <% @ideas.each do |idea| %>
       <div id="<%= idea.id %>">
-        <li><%= idea.title %></li><button id="vote<%= idea.id %>" class="voteButton">Vote</button>
+        <li><%= idea.title %>(<%= idea.votes.count %>)</li>
+        <button id="vote_<%= idea.id %>" class="voteButton">Vote</button>
           <ul>
             <% idea.tags.each do |tag| %>
             <li><%= tag.name %></li>

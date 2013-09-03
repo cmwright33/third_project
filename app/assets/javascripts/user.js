@@ -90,17 +90,21 @@ $(function () {
   });
 
 
-  $('#voteButton').on('click', function(){
-    var voteIdeaId = this.id.split(',')[1];
+  $('.voteButton').on('click', function(){
+    console.log(this.id);
+    var voteIdeaId = this.id.split('_')[1];
+    console.log(this.id);
     var vote = {"id" : voteIdeaId};
+    console.log(voteIdeaId);
     $.ajax({
-      url: '/users/votes',
+      url: '/votes',
       dataType: 'script',
       type: 'post',
       data: vote
     }).done(function(data){
       console.log(data);
     });
+    $('#vote_'+voteIdeaId).remove();
   });
 
 
