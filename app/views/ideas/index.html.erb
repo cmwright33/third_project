@@ -1,4 +1,5 @@
 
+
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span12">
@@ -22,6 +23,31 @@
   </div>
 </div>
 
+
+
+
+<h1>Listing ideas</h1>
+
+  <ul>
+    <% @ideas.each do |idea| %>
+      <div id="<%= idea.id %>">
+        <li><%= idea.title %>(<%= idea.votes.count %>)</li>
+        <button id="vote_<%= idea.id %>" class="voteButton">Vote</button>
+          <ul>
+            <% idea.tags.each do |tag| %>
+            <li><%= tag.name %></li>
+          <% end %>
+          </ul>
+           <ol>
+          <% idea.comments.each do |comment| %>
+          <li>(<%= idea.votes.count %>)</li>
+          <% end %>
+        </ol>
+      Add comment: <input id="mainComment<%= idea.id %>" type="text" name="comment">
+      <button id="<%= idea.id * 2 %>" class="mainCommentButton">submit</button>
+      </div>
+    <% end %>
+  </ul>
 
 
 

@@ -1,0 +1,16 @@
+<div class="userIdeaClass">
+  <ul id="<%= @user.id %>">
+  <% @user_ideas.each do |idea| %>
+    <div id="<%= idea.id %>">
+      <li><%= idea.title %></li>
+      Add comment: <input id="comment" type="text" name="comment">
+      <button id="<%= idea.id * 2 %>" class="userCommentButton">submit</button>
+        <ul>
+          <% idea.comments.each do |comment| %>
+          <li><%= comment.content %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+  </ul>
+</div>

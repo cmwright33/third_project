@@ -1,17 +1,17 @@
-      <div class="idea-<%=idea.id%>">
+      <div id="<%=idea.id%>">
 
             <div class="row-fluid">
               <div class="span12" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
-                <h2 style=" border-bottom: 1px solid #EEE; ">This is Idea Number:<%=idea.title%></h2>
+                <h2 style=" border-bottom: 1px solid #EEE; ">This is Idea Number:<%=idea.title%>(<%= idea.votes.count %>)</h2>
                   <p><%=idea.content%></p>
                   <p><%=idea.tag%></p>
 
                   <div id="comment-<%=@comments.first.id%>">
                     <div class="row-fluid">
-                      <% @comments.first%>
+                      <% idea.comments.each do |comment|%>
                       <div class="span8 offset4" style="background-color:white;">
                         <blockquote>
-                          <p><%= @comments.first.content %></p>
+                          <p><%= idea.comment.content %></p>
                           <small><cite title="Source Title">Source Title</cite></small>
                         </blockquote>
                       </div>

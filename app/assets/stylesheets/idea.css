@@ -38,3 +38,16 @@ border: 1px solid black; /*Add 1px solid border, use any color you want*/
       border-color: #000033;
     }
 
+.ideaInputForm{
+  float:left;
+}
+
+.userIdeaClass{
+  float:left;
+}
+
+
+.tagSearchBox{
+  float:right;
+  margin-right: 100px;
+}

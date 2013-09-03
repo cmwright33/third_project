@@ -1,3 +1,17 @@
-<%= current_user.email %>
 
+<%= @user %>
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+
+<h1>New idea</h1>
+
+<%= render 'form' %>
+
+<%= render 'idea' %>
+
+<div id="tagSearchBox">
+  Search by Tag: </br>
+  <input id="tagText" type="text" name="tagSearchBox">
+  <button id="tagSearchButton">Search</button>
+</div>
+
+
