@@ -3,7 +3,7 @@ class IdeasController < ApplicationController
 
   #all ideas
   def index
-    @ideas = Idea.all
+    @ideas = Idea.order("created_at DESC")
   end
 
 
@@ -15,14 +15,10 @@ class IdeasController < ApplicationController
     title: params[:title],
     content: params[:content]
     )
-    @tag = Tag.create(name: params[:tag])
-    @idea.tags << @tag
-    @tag.ideas << @idea
-    @tag.save
+    tag = Tag.where(name: params[:tag]).first_or_create
+    @idea.tags << tag
     @idea.save
     current_user.ideas << @idea
-
-
     respond_to do |format|
       format.json {render json: @idea}
     end

@@ -13,3 +13,7 @@ border: 1px solid black; /*Add 1px solid border, use any color you want*/
   float:left;
 }
 
+.tagSearchBox{
+  float:right;
+  margin-right: 100px;
+}

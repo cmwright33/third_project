@@ -7,20 +7,6 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
-  # GET /comments/1
-  # GET /comments/1.json
-  def show
-  end
-
-  # GET /comments/new
-  def new
-
-  end
-
-  # GET /comments/1/edit
-  def edit
-  end
-
 
   #create a new comment and save it to an idea.
   def create
@@ -28,9 +14,10 @@ class CommentsController < ApplicationController
     current_user.comments << @comment
     current_user.save
 
-    @idea = Idea.find(params[:ideaId])
-    @idea.comments << @comment
-    @idea.save
+    idea = Idea.find(params[:ideaId])
+    idea.comments << @comment
+    idea.comments.order("created_at DESC")
+    idea.save
     respond_to do |format|
       format.json {render json: @comment}
     end

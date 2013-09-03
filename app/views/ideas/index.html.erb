@@ -1,34 +1,25 @@
 <h1>Listing ideas</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Tag</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <ul>
     <% @ideas.each do |idea| %>
-      <tr>
-        <td><%= idea.title %></td>
-        <td><%= idea.content %></td>
-        <td><%= idea.tag %></td>
-        <td><%= link_to 'Show', idea %></td>
-        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div id="<%= idea.id %>">
+        <li><%= idea.title %></li><button id="vote<%= idea.id %>" class="voteButton">Vote</button>
+          <ul>
+            <% idea.tags.each do |tag| %>
+            <li><%= tag.name %></li>
+          <% end %>
+          </ul>
+           <ol>
+          <% idea.comments.each do |comment| %>
+          <li><%= comment.content %></li>
+          <% end %>
+        </ol>
+      Add comment: <input id="mainComment<%= idea.id %>" type="text" name="comment">
+      <button id="<%= idea.id * 2 %>" class="mainCommentButton">submit</button>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </ul>
 
-<br>
-
-<%= link_to 'New Idea', new_idea_path %>
 
 
 

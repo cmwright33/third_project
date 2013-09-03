@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-50.times do |n|
-  User.create(username: "John Doe#{n}", email: "john#{n}@gmail.com", password: 'topsecret', password_confirmation: 'topsecret')
-end
+
+  User.create(username: 'test', email: 'test@test.com', password: 'testtest', password_confirmation: 'testtest')
+
