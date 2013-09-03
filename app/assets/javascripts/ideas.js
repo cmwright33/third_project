@@ -15,19 +15,29 @@ $(function() {
       if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
         $('.pagination').text("Fetching more Ideas...");
         return $.getScript(url);
+        console.log(url);
+        //   $.ajax({
+        //   url: 'url',
+        //   dataType: 'script',
+        //   type: 'get'
+        // }).done(function(){
+        //   console.log(script);
+        // });
+
       }
     });
     return $(window).scroll();
   }
 
-//   $.ajax({
-//     url: '/ideas',
-//     dataType: 'json',
-//     type: 'get'
-//   }).done(function(data){
-//     console.log(data);
-//     console.log(data.id);
-// });
+
+
+
+      // $('.pagination a').on("click", function () {
+      //   $('.pagination').html('Page is loading...');
+      //   $.get(this.href, null, null, 'script');
+      //   return false;
+      // });
+
 
 
 

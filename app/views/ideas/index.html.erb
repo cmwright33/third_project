@@ -6,11 +6,9 @@
       <div class="row-fluid">
         <div class="span7">
           <div class="ideas">
-            <%= render 'idea' %>
+            <%= render @ideas %>
           </div>
-
-            <%= will_paginate @ideas %>
-
+          <%= will_paginate @ideas %>
         </div>
         <div class="span4" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
           <h3 style=" border-bottom: 1px solid #EEE;">Live Ideas</h3>
