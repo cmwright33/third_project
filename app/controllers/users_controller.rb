@@ -6,7 +6,10 @@ class UsersController < ApplicationController
     @user_ideas.each do |idea|
       idea.comments.order("created_at DESC")
     end
-
+    @user_vote_ids = [];
+    @user.votes.each do |vote|
+      @user_vote_ids << vote.idea_id
+    end
   end
 
 

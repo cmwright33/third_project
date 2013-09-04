@@ -1,6 +1,6 @@
-var div = '<div></div>';
-var ul = '<ul></ul>';
-for(var i = 0; i < <% @tag.ideas.length %>; i ++){
-  var li = '<li>'+ <%= @tag.ideas[i].title %> +'</li>';
-$('#tagSearchBox').append(div).append(ul).append(li);
-}
+<% @tag.first.ideas.each do |idea| %>
+  var div = '<div></div>';
+  var ul = '<ul></ul>';
+  var li = '<li>'+'<%= idea.title %>'+'</li>';
+  $('#tagSearchBox').append(div).append(ul).append(li);
+<% end %>

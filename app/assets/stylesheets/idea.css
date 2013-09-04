@@ -14,6 +14,14 @@ border: 1px solid black; /*Add 1px solid border, use any color you want*/
 }
 
 .tagSearchBox{
-  float:right;
-  margin-right: 100px;
+  float:left;
+}
+
+#userTags{
+  float: right;
+}
+
+#myVotes{
+  float: right;
+  margin-right: 200px;
 }

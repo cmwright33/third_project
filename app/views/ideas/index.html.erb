@@ -3,8 +3,11 @@
   <ul>
     <% @ideas.each do |idea| %>
       <div id="<%= idea.id %>">
-        <li><%= idea.title %>(<%= idea.votes.count %>)</li>
-        <button id="vote_<%= idea.id %>" class="voteButton">Vote</button>
+        <li><%= idea.title %>(<span><%= idea.votes.count %></span>)</li>
+          <% if @user_vote_ids.include?(idea.id) %>
+          <% else %>
+              <button id="vote_<%= idea.id %>" class="voteButton">Vote</button>
+          <% end %>
           <ul>
             <% idea.tags.each do |tag| %>
             <li><%= tag.name %></li>

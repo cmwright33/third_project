@@ -1,6 +1,4 @@
 
-
-
 $(function () {
 
   $('#submitButton').on('click',function(){
@@ -93,9 +91,7 @@ $(function () {
   $('.voteButton').on('click', function(){
     console.log(this.id);
     var voteIdeaId = this.id.split('_')[1];
-    console.log(this.id);
     var vote = {"id" : voteIdeaId};
-    console.log(voteIdeaId);
     $.ajax({
       url: '/votes',
       dataType: 'script',
