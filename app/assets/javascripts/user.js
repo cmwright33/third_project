@@ -16,11 +16,11 @@ $(function () {
       data: idea
     }).done(function(data){
       console.log(data);
-      var div = $('<div id=" '+ data.id +' "></div>');
+      var div = $('<div id=" '+ data.id +' "></div>').addClass("individual-idea-container");
       var li = '<li>'+ data.title +'</li>';
       var input = '<input id="comment" type="text" name="comment">';
       var button = '<button id=" '+ data.id * 2 +' " class="commentButton">submit</button>';
-      var ideaForm = div.append(li).append(input).append(button);
+      var ideaForm = div.append(li).append(input).append(button).css("list-style-type", "none");
       $('#' + data.user_id).prepend(ideaForm);
     });
     $('#title').val('');

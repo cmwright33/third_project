@@ -18,7 +18,7 @@
                           </tr>
                           <tr>
                           <td><h3><span><%= idea.votes.count %></span>
-                            <% if @user_vote_ids.include?(idea.id) %>
+                            <% if @user_vote_ids.nil? %>
                               <% else %>
                                   <button id="vote_<%= idea.id %>" class="voteButton">Vote</button>
                            <% end %></h3></td>
@@ -50,7 +50,7 @@
 
                         <% idea.comments.each do |comment| %>
                         <div class="span9 offset2" id="idea-comments">
-
+                          <h6>comment  <%= comment.id %></h6>
                           <li><%=comment.content%></li>
                           <li><small><cite title="Source Title">--<%=comment.user.email%></cite></small></li>
                         </div>
