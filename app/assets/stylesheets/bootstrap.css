@@ -8,6 +8,12 @@
  * Designed and built with all the love in the world by @mdo and @fat.
  */
 
+
+body {
+  background-color: #0094CC
+}
+
+
 .clearfix {
   *zoom: 1;
 }
@@ -18,6 +24,57 @@
   line-height: 0;
   content: "";
 }
+
+
+.headline img{
+  float: left;
+}
+.headline h3{
+  text-align: left;
+  margin-left: 60px;
+}
+
+.stats {
+background-color: #40ACD4;
+text-align: left;
+border: 1px solid grey;
+border-radius: 3px;
+width:163px;
+}
+
+
+.voteButton {
+  background:url(plus5.png);
+  border: none;  /* If your icon IS the button */
+  color: transparent;  /* If you don't want the button text to show up */
+  height: 16px;
+  width: 16px;
+}
+.voteButton:hover {
+  background-color: black;
+}
+
+#idea-container div .span12{
+  position: relative;
+  background-color: #0094CC;
+  box-shadow: 10px 10px 5px #888888;
+  border: 1px solid black;
+  border-radius:10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.stats-table {
+  position: relative;
+  text-align: center;
+}
+
+.stats-table table {
+  vertical-align: central;
+  position: relative;
+  text-align: center;
+}
+
 
 .clearfix:after {
   clear: both;
@@ -249,6 +306,7 @@ a:focus {
 
 .img-polaroid {
   padding: 4px;
+  width:40px;
   background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);

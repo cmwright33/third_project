@@ -14,7 +14,14 @@
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Individual Page</a></li>
+          <% unless current_user.nil? %>
+          <li><%= link_to current_user.email , root_path %></li>
+          <% end%>
+          <% if current_user.nil? %>
+          <li><%= link_to "Sign in",  new_user_session_path %></li>
+          <% else %>
+          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %><li>
+          <% end %>
         </ul>
         <h3 class="text-muted">Idea Engine</h3>
       </div>
