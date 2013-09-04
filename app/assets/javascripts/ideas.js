@@ -1,14 +1,7 @@
 
 $(function() {
 
-  var allPanels = $('.accordion > dd').hide();
 
-  $('accordion > dt > a').on('click', function(){
-
-    allPanels.slideUp();
-    $(this).parent().next().slideDown();
-    return false;
-  });
 
   if ($('.pagination').length) {
     $(window).scroll(function() {
@@ -22,6 +15,8 @@ $(function() {
     });
     return $(window).scroll();
   }
+
+
 
 
 });
