@@ -6,58 +6,40 @@
                   <div id="<%= idea.id %>">
                     <div class="headline">
                      <img src="http://farm6.staticflickr.com/5254/5488146741_b80f4b056a.jpg" class="img-polaroid">
-                     <h3 style="border-bottom: 1px solid #EEE; "><%=idea.title%></h3>
+                     <h3 style="border-bottom: 1px solid #EEE; "><%=idea.title%> Votes: <span><%= idea.votes.count %></span></h3>
 
                     </div>
                     <h6>Stats</h6>
                     <div class="stats">
-                           <table class="stats-table"border="1">
-                          <tr>
-                          <th>Votes</th>
-                          <th>Github Commits</th>
-                          </tr>
-                          <tr>
-                          <td><h3><span><%= idea.votes.count %></span>
+                          <h3>
                             <% if @user_vote_ids.include?(idea.id) %>
                               <% else %>
                                   <button id="vote_<%= idea.id %>" class="voteButton">Vote</button>
-                           <% end %></h3></td>
-                          <td>
-                            <table border="1">
-                            <tr>
-                              <th>Weekly</th>
-                              <th>Total</th>
-                            </tr>
-                            <tr>
-                              <td>35</td>
-                              <td>145</td>
-                            </tr>
-                            </table>
-                          </td>
-                          </tr>
-                          </table>
-                       </div>
-                      <ul>
-                        <li><%=idea.content%></li>
-                        <% idea.tags.each do |tag| %>
-                        <li><%= tag.name %></li>
-                      <% end %>
+                           <% end %></h3>
+                        <ul>
+                          <li><%=idea.content%></li>
+                            <% idea.tags.each do |tag| %>
+                          <li><%= tag.name %></li>
+                          <% end %>
                       </ul>
-
-                         Add comment: <input id="mainComment<%= idea.id %>" type="text" name="comment">
-                          <button id="<%= idea.id * 2 %>" class="mainCommentButton">submit</button>
-                       <ol>
-
-                        <% idea.comments.each do |comment| %>
-                        <div class="span9 offset2" style="background-color:white; border: 1px solid black; border-radius:5px;">
-
-                          <li><%=comment.content%></li>
-                          <li><small><cite title="Source Title">--<%=comment.user.email%></cite></small></li>
-                        </div>
+                       </div>
+                       <div class="span9 offset2" style="background-color:white; border: 1px solid black; border-radius:5px;">
+                        <ol>
+                          <% idea.comments.each do |comment| %>
+                            <% counter = 0 %>
+                            <div id="comment_<%= comment.id %>">
+                              <li><%=comment.content%></li>
+                                <ul>
+                                  <li><small><cite class="usernameComment" id="comment.user.username" title="Source Title">--<a href="users/<%=comment.user.id%>"><%= comment.user.username %></a></cite></small></li>
+                                </ul>
+                            </div>
                           <% end %>
                        </ol>
-
-
+                       <div id="commentBox">
+                        Add comment: <input id="mainComment<%= idea.id %>" type="text" name="comment">
+                        <button id="<%= idea.id * 2 %>" class="mainCommentButton">submit</button>
+                      </div>
+                      </div>
                   </div>
                 </ul>
               </div>

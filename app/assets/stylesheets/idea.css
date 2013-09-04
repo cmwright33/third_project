@@ -60,3 +60,6 @@ border: 1px solid black; /*Add 1px solid border, use any color you want*/
   margin-right: 200px;
 }
 
+#commentBox{
+  border-color:black;
+}
