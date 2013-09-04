@@ -11,6 +11,65 @@
           <% end %>
         </ul>
     </div>
-  <% end %>
+
   </ul>
 </div>
+
+
+           <div class="row-fluid">
+              <div class="span12">
+
+              <ul id="<%= @user.id %>">
+                  <div id="<%= @user_ideas.first.id %>">
+                    <div class="headline">
+                     <img src="http://farm6.staticflickr.com/5254/5488146741_b80f4b056a.jpg" class="img-polaroid">
+                     <h3 style="border-bottom: 1px solid #EEE; "><%=idea.title%></h3>
+
+                    </div>
+                    <h6>Stats</h6>
+                    <div class="stats">
+                           <table class="stats-table"border="1">
+                          <tr>
+                          <th>Votes</th>
+                          <th>Github Commits</th>
+                          </tr>
+                          <tr>
+                          <td><h3><span><%= idea.votes.count %></span>
+                          </td>
+                          <td>
+                            <table border="1">
+                            <tr>
+                              <th>Weekly</th>
+                              <th>Total</th>
+                            </tr>
+                            <tr>
+                              <td>35</td>
+                              <td>145</td>
+                            </tr>
+                            </table>
+                          </td>
+                          </tr>
+                          </table>
+                       </div>
+                      <ul>
+                        <li><%=idea.content%></li>
+                        <% idea.tags.each do |tag| %>
+                        <li><%= tag.name %></li>
+                      <% end %>
+                      </ul>
+                       <ol>
+                        <% idea.comments.each do |comment| %>
+                        <div class="span9 offset2" style="background-color:white; border: 1px solid black; border-radius:5px;">
+
+                          <li><%=comment.content%></li>
+                          <li><small><cite title="Source Title">--<%=comment.user.email%></cite></small></li>
+                        </div>
+                          <% end %>
+                       </ol>
+
+
+                  </div>
+                </ul>
+              </div>
+            </div>
+          <%end%>
