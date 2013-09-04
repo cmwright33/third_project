@@ -1,17 +1,44 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+          <div class="span3" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
+           <img src="http://farm6.staticflickr.com/5254/5488146741_b80f4b056a.jpg" class="img-polaroid">
+            <h5><%= @user.username %></h5>
+            <h5>:github_URL</h5>
+            <h5>:portfolio_URL</h5>
+            <h3></h3>
+            <p><h5>Bio</h5>Andouille flank brisket shankle meatball pork belly. Pancetta prosciutto chuck meatball, meatloaf</p>
 
-<%= @user %>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+          <div id="tagSearchBox">
+          Search by Tag: </br>
+          <input id="tagText" type="text" name="tagSearchBox">
+          <button id="tagSearchButton">Search</button>
+          </div>
 
-<h1>New idea</h1>
+          </div>
 
-<%= render 'form' %>
+          <div class="span1"></div>
+        <div class="span7">
+            <div class="row-fluid">
+              <div class="span12" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
 
-<%= render 'idea' %>
+                  <%= render 'form' %>
 
-<div id="tagSearchBox">
-  Search by Tag: </br>
-  <input id="tagText" type="text" name="tagSearchBox">
-  <button id="tagSearchButton">Search</button>
+              </div>
+            </div>
+        </div>
+        <div class="span1"></div>
+          <div class="span7">
+            <div class="row-fluid">
+              <div class="span12" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
+
+                  <%= render 'idea' %>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
 </div>
-
-

@@ -62,20 +62,6 @@
                 </ul>
               </div>
             </div>
-                          <table border="1">
-                          <tr>
-                          <th>Votes</th>
-                          <th>Github Commits</th>
-                          </tr>
-                          <tr>
-                          <td><h3><span><%= idea.votes.count %></span>
-                            <% if @user_vote_ids.include?(idea.id) %>
-                              <% else %>
-                                  <button id="vote_<%= idea.id %>" class="voteButton">Vote</button>
-                           <% end %></h3></td>
-                          <td>35 commits</td>
-                          </tr>
-                          </table>
 
 
 
