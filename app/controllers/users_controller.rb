@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
+     before_filter :authenticate_user!
 
   def index
-      if current_user.nil?
-        redirect_to new_user_session_path
-      else
+      # if current_user.nil?
+      #   redirect_to new_user_session_path
+      # else
         @user = current_user
         @user_ideas = @user.ideas.order("created_at DESC")
         @user_ideas.each do |idea|
@@ -13,12 +14,16 @@ class UsersController < ApplicationController
         @user.votes.each do |vote|
         @user_vote_ids << vote.idea_id
         end
-      end
+      # end
   end
 
   def show
-      @user = User.find(params[:id])
-       @user_ideas = @user.ideas.order("created_at DESC")
+    # if current_user.nil?
+
+    # else
+         @user = User.find(params[:id])
+         @user_ideas = @user.ideas.order("created_at DESC")
+    # end
   end
 
 

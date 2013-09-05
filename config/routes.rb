@@ -1,5 +1,6 @@
 ThirdProject::Application.routes.draw do
 
+  devise_for :users
 
   resources :ideas
 
@@ -10,6 +11,7 @@ ThirdProject::Application.routes.draw do
   resources :comments
 
   resources :ideas
+  get '/users', to: 'users#index'
 
   post '/save/idea', to: 'ideas#save'
 
@@ -17,9 +19,7 @@ ThirdProject::Application.routes.draw do
 
   get '/index/tags', to: 'tags#index_show'
 
-
-  devise_for :users
-    root :to => "users#index"
-  end
+  root :to => "welcome#index"
+end
 
 
