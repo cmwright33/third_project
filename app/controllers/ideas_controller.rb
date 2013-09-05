@@ -12,8 +12,6 @@ class IdeasController < ApplicationController
   end
 
 
-
-
   #save new idea
   def save
     @idea = Idea.create(
@@ -27,36 +25,11 @@ class IdeasController < ApplicationController
     respond_to do |format|
       format.json {render json: @idea}
     end
-
   end
 
 
 
 
-
-
-  # PATCH/PUT /ideas/1
-  # PATCH/PUT /ideas/1.json
-  def update
-    @idea = Idea.find(params[:id])
-    @idea.comments << params[:content]
-    @idea.save
-    current_user.comments << params[:content]
-    current_user.save
-    respond_to do |format|
-      format.json {render json: @idea}
-    end
-  end
-
-  # DELETE /ideas/1
-  # DELETE /ideas/1.json
-  def destroy
-    @idea.destroy
-    respond_to do |format|
-      format.html { redirect_to ideas_url }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

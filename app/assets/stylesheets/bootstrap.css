@@ -10,9 +10,50 @@
 
 
 body {
-  background-color: #0094CC
+  background: #0094CC;
 }
 
+.bio {
+
+margin-left: 5%;
+}
+
+
+#idea-comments{
+  margin-left: 25%;
+  background-color:white;
+  border-radius:5px;
+  margin-bottom: 1%;
+  list-style-type: none;
+}
+
+
+.img-polaroid-profile {
+  width: 80px;
+  margin-left: 29%;
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.img-polaroid-index {
+  margin-left: 0px;
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 4px;
+  width:60px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
 .clearfix {
   *zoom: 1;
@@ -53,16 +94,37 @@ width:163px;
 .voteButton:hover {
   background-color: black;
 }
-
-#idea-container div .span12{
+.individual-idea-container{
   position: relative;
-  background-color: #0094CC;
+  background-color: #5fd2fc;
   box-shadow: 10px 10px 5px #888888;
-  border: 1px solid black;
   border-radius:10px;
   padding-bottom: 10px;
   margin-bottom: 15px;
+  list-style-type: none;
 }
+
+#idea-container div .span12{
+  position: relative;
+  background-color: #5fd2fc;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius:10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  list-style-type: none;
+}
+
+#idea-container div .span10{
+  position: relative;
+  background-color: #5fd2fc;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius:10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  list-style-type: none;
+}
+
+
 
 .stats-table {
   position: relative;
@@ -305,6 +367,9 @@ a:focus {
 }
 
 .img-polaroid {
+  margin-left: 5px;
+  margin-top: 5px;
+  border-radius: 3px;
   padding: 4px;
   width:40px;
   background-color: #fff;

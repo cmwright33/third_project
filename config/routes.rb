@@ -15,6 +15,8 @@ ThirdProject::Application.routes.draw do
 
   get '/users/:id', to: 'users#show'
 
+  get '/index/tags', to: 'tags#index_show'
+
 
   devise_for :users
   root :to => "users#index"

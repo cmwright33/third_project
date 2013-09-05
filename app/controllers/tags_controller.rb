@@ -4,24 +4,23 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tag = Tag.where(name: params[:name])
+    @tag = Tag.where(name: params[:name]).order("created_at DESC")
     respond_to do |format|
       format.html
       format.js {}
     end
-
   end
 
 
-  # DELETE /tags/1
-  # DELETE /tags/1.json
-  def destroy
-    @tag.destroy
+  def index_show
+    @tag = Tag.where(name: params[:name]).order("created_at DESC")
     respond_to do |format|
-      format.html { redirect_to tags_url }
-      format.json { head :no_content }
+      format.html
+      format.js {}
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
