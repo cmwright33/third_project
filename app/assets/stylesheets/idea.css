@@ -63,3 +63,18 @@ border: 1px solid black; /*Add 1px solid border, use any color you want*/
 #commentBox{
   border-color:black;
 }
+
+ul{
+  list-style-type: none;
+  padding:0;
+  margin:0;
+}
+
+ul li
+{
+list-style-type: none;
+padding: 0px;
+margin: 0px;
+}
+
+
