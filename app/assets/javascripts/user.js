@@ -7,7 +7,8 @@ $(function () {
     var idea = {
       "title" : $('#title').val(),
       "content" : $('#content').val(),
-      "tag" : $('#tag').val()
+      "tag" : $('#tag').val(),
+      "github_repo" : $('#github-url').val()
       };
     $.ajax({
       url: '/save/idea',
@@ -26,6 +27,7 @@ $(function () {
     $('#title').val('');
     $('#content').val('');
     $('#tag').val('');
+    $('#github-url').val('');
   });
 
 
@@ -106,6 +108,18 @@ $(function () {
     });
     $('#vote_'+voteIdeaId).remove();
   });
+
+  $('input[name=idea]').on('click', function(){
+     $('input[name=project]').attr('checked',false);
+     $('#project-input').slideUp("slow");
+   });
+
+  $('input[name=project]').on('click', function(){
+     $('input[name=idea]').attr('checked',false);
+     $('#project-input').slideToggle("slow");
+   });
+
+  $('#project-input').hide();
 
 
 

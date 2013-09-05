@@ -94,6 +94,8 @@ width:163px;
 .voteButton:hover {
   background-color: black;
 }
+
+#sign-in-out,
 .individual-idea-container{
   position: relative;
   background-color: #5fd2fc;

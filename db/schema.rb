@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20130831212524) do
   create_table "ideas", force: true do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "github_repo"
     t.integer  "user_id"
     t.integer  "comments_id"
     t.integer  "votes_id"

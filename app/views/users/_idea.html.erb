@@ -4,7 +4,12 @@
           <ul id="<%= @user.id %>">
             <% @user_ideas.each do |idea| %>
             <div id="<%= idea.id %>" class="individual-idea-container">
-              <%= idea.title %>
+              <div class="headline">
+               <img src="http://farm6.staticflickr.com/5254/5488146741_b80f4b056a.jpg" class="img-polaroid-index">
+                <h3 style="border-bottom: 1px solid #EEE; "><%=idea.title%></h3>
+              </div>
+              <%= idea.content %>
+              <%= idea.votes.count %>
               <ul>
                 <% idea.comments.each do |comment| %>
                 <div class="span9 offset2" id="idea-comments">
