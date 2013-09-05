@@ -16,10 +16,10 @@ class UsersController < ApplicationController
       end
   end
 
-  # def show
-  #     @user = User.find(params[:id])
-  #      @user_ideas = @user.ideas.order("created_at DESC")
-  # end
+  def show
+      @user = User.find(params[:id])
+       @user_ideas = @user.ideas.order("created_at DESC")
+  end
 
 
 

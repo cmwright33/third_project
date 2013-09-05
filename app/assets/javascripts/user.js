@@ -15,7 +15,7 @@ $(function () {
     }).done(function(data){
       console.log(data);
       var div = $('<div id=" '+ data.id +' "></div>').addClass("individual-idea-container");
-      var li = '<li>'+ data.title +'</li>';
+      var li = '<h3><li>'+ data.title +'</li></h3>';
       var li2 = $('<li>' + data.content +'</li>').addClass("stats");
       var li3 = $('<li><li>').attr('id', 'idea-comments');
       var input = '<input id="comment" type="text" name="comment">';

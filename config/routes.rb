@@ -13,7 +13,7 @@ ThirdProject::Application.routes.draw do
 
   post '/save/idea', to: 'ideas#save'
 
-  # get '/users/:id', to: 'users#show'
+  get '/users/:id', to: 'users#show'
 
   get '/index/tags', to: 'tags#index_show'
 
