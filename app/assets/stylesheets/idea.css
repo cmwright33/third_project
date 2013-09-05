@@ -33,7 +33,7 @@ border: 1px solid black; /*Add 1px solid border, use any color you want*/
     text-decoration: none;
     color: #105cb6;
     border: 1px solid #9aafe5;
-    }
+  }
 
 .ideaInputForm{
   float:left;
@@ -65,8 +65,7 @@ ul{
   list-style-type: none;
 }
 
-ul li
-{
+ul li{
 list-style-type: none;
 
 }

@@ -104,14 +104,14 @@ $(function () {
      $('#project-input').slideToggle("slow");
    });
 
-  $('#tagSearchButton').on('click', function(){
-    $('#tagSearchBox').slideUp("slow");
-  });
+  // $('#tagSearchButton').on('click', function(){
+  //   $('#tagSearchBox').slideUp("slow");
+  // });
 
 
 
   $('#project-input').hide();
-  $('#tagSearchBox');
+  // $('#tagSearchBox');
 
   $('#indexTagSearchButton').on('click', function(){
     var tag = {"name" : $('#indexTagText').val()};
