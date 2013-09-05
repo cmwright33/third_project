@@ -33,6 +33,7 @@ $(function () {
   //when commenting on a user's profile page
   $('.userCommentButton').on('click', function(){
     ideaId = this.id / 2;
+    console.log(ideaId);
     text = $('#comment').val();
     console.log(text);
     var comment = {"content" : text,
@@ -47,7 +48,9 @@ $(function () {
     }).done(function(data){
     console.log(data);
     var li = '<li>' + text + '</li>';
-    $('#'+ ideaId +' ul').prepend(li);
+    var div = '<div class="span9 offset2" id="idea-comments">'+li+'</div>';
+    // var liSmall = '<li><small><cite title="Source Title">'+data.user.email+'<li><small><cite title="Source Title">';
+    $('#'+ ideaId +' ul').prepend(div);
     });
     $('#comment').val('');
   });
@@ -73,21 +76,6 @@ $(function () {
     $('#'+ ideaId +' ol').prepend(li);
     });
     $('#mainComment' + ideaId).val('');
-  });
-
-
-
-  $('#tagSearchButton').on('click', function(){
-    var tag = {"name" : $('#tagText').val()};
-      $.ajax({
-      url: '/tags',
-      dataType: 'script',
-      type: 'get',
-      data: tag
-      }).done(function(data){
-      console.log(data);
-    });
-    $('#tagText').val('');
   });
 
 
@@ -133,8 +121,28 @@ $(function () {
   });
 
 
+  $('.tagSearchButton').on('click', function(){
+    var userTagId = this.id.split('_')[1];
+    console.log(userTagId);
+    var tag = {"name" : $('#tagText').val(),
+              "userId" : userTagId
+              };
+      console.log(tag);
+      $.ajax({
+      url: '/user/tags',
+      dataType: 'script',
+      type: 'get',
+      data: tag
+      }).done(function(data){
+      console.log(data);
+    });
+    $('#tagText').val('');
+  });
+
+
+
   $('img').on('click', function(){
 
-  })
+  });
 
 });

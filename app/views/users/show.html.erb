@@ -12,9 +12,9 @@
             <p><h5>Bio</h5>Andouille flank brisket shankle meatball pork belly. Pancetta prosciutto chuck meatball, meatloaf</p>
           </div>
             <div id="tagSearchBox">
-            Search by Tag: </br>
+            Search <%= @user.username %>'s Tags: </br>
             <input id="tagText" class="input-small" type="text" name="tagSearchBox">
-            <button class="btn btn-small" id="tagSearchButton">Search</button>
+            <button class="tagSearchButton" id="tagSearchButton_<%= @user.id %>">Search</button>
             </div>
 
           </div>

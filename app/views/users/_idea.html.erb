@@ -25,10 +25,12 @@
         </div>
         <ul>
           <% idea.comments.each do |comment| %>
-          <div class="span9 offset2" id="idea-comments">
-            <h6>comment</h6>
+
+          <div class="span9 offset2" id="idea-comments" style="background-color:white; border: 1px solid black; border-radius:5px;">
             <li><%=comment.content%></li>
-            <li><small><cite title="Source Title">--<%=comment.user.email%>, created at (<%=comment.created_at%>)</cite></small></li>
+            <ul>
+              <li><small><cite class="usernameComment" id="comment.user.username" title="Source Title">--<a href="/users/<%=comment.user.id%>"><%= comment.user.username %></a>, created at (<%=comment.created_at%>)</cite></small></li>
+            </ul>
           </div>
           <% end %>
           Add comment: <input id="comment" type="text" name="comment" placeholder="add a comment">

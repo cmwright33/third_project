@@ -17,7 +17,9 @@ ThirdProject::Application.routes.draw do
 
   get '/users/:id', to: 'users#show'
 
-  get '/index/tags', to: 'tags#index_show'
+  get '/index/tags', to: 'tags#index'
+
+  get '/user/tags', to: 'tags#user_show'
 
   root :to => "welcome#index"
 end
