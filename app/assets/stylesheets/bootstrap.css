@@ -65,22 +65,25 @@ margin-left: 5%;
   line-height: 0;
   content: "";
 }
-
+.headline {
+  float: left;
+}
 
 .headline img{
   float: left;
 }
 .headline h3{
   text-align: left;
-  margin-left: 60px;
+  margin-left: 1%;
 }
 
 .stats {
+margin-top: 1%;
 background-color: #40ACD4;
 text-align: left;
 border: 1px solid grey;
 border-radius: 3px;
-width:163px;
+margin-bottom: 1%;
 }
 
 

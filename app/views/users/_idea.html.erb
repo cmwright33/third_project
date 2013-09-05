@@ -1,15 +1,30 @@
       <div class="fluid-row">
         <div class="span12">
-        <div class="userIdeaClass">
           <ul id="<%= @user.id %>">
-            <% @user_ideas.each do |idea| %>
-            <div id="<%= idea.id %>" class="individual-idea-container">
+            <div class="span11" style="border-bottom: 1px solid #EEE;">
+             <div id="<%= user_idea.id %>">
               <div class="headline">
+                <div class="span2">
                <img src="http://farm6.staticflickr.com/5254/5488146741_b80f4b056a.jpg" class="img-polaroid-index">
-                <h3 style="border-bottom: 1px solid #EEE; "><%=idea.title%></h3>
+                <h3 style="border-bottom: 1px solid #EEE; "><%=user_idea.title%></h3>
+                </div>
+                <div class="span3">
+
+                  <%= user_idea.votes.count %>
+                    <% if @user_vote_ids.include?(idea.id) %>
+                      <% else %>
+                      <button id="vote_<%= idea.id %>" class="voteButton">Vote</button></h3>
+                  <% end %>
+
+                </div>
               </div>
-              <%= idea.content %>
-              <%= idea.votes.count %>
+              </div>
+            </div>
+
+              <div class="hide-show-content">
+              <%= user_idea.content %>
+
+              </div>
               <ul>
                 <% idea.comments.each do |comment| %>
                 <div class="span9 offset2" id="idea-comments">
@@ -21,10 +36,10 @@
               Add comment: <input id="comment" type="text" name="comment">
               <button id="<%= idea.id * 2 %>" class="userCommentButton">submit</button>
               </ul>
-            </div>
+
             <% end %>
           </ul>
-        </div>
+
       </div>
     </div>
 
