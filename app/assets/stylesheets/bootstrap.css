@@ -109,6 +109,18 @@ margin-bottom: 1%;
   list-style-type: none;
 }
 
+#idea-container{
+  position: relative;
+  background-color: #5fd2fc;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius:10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  list-style-type: none;
+}
+
+
+
 #idea-container div .span12{
   position: relative;
   background-color: #5fd2fc;

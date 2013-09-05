@@ -22,18 +22,23 @@
           <div class="span1"></div>
         <div class="span7">
             <div class="row-fluid">
-              <div class="span12" id="idea-container">
+              <div class="span12" >
 
                   <%= render 'form' %>
 
               </div>
             </div>
         </div>
+         <div class="span1"></div>
+
         <% if @user_ideas.empty?%>
         <%else%>
         <div class="span1"></div>
           <div class="span7">
-                    <%= render @user_ideas %>
+            <div class="ideas" >
+
+                    <%= render "idea" %>
+            </div>
           </div>
            <% end %>
       </div>
