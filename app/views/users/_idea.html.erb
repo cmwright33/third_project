@@ -20,6 +20,7 @@
          <div class="span11">
           <div class="stats">
             <p><%= idea.content %></p>
+            <small><cite>created at <%=idea.created_at%></cite></small>
           </div>
         </div>
         <ul>
@@ -27,10 +28,10 @@
           <div class="span9 offset2" id="idea-comments">
             <h6>comment</h6>
             <li><%=comment.content%></li>
-            <li><small><cite title="Source Title">--<%=comment.user.email%></cite></small></li>
+            <li><small><cite title="Source Title">--<%=comment.user.email%>, created at (<%=comment.created_at%>)</cite></small></li>
           </div>
           <% end %>
-          Add comment: <input id="comment" type="text" name="comment">
+          Add comment: <input id="comment" type="text" name="comment" placeholder="add a comment">
           <button id="<%= idea.id * 2 %>" class="userCommentButton">submit</button>
         </ul>
       </div>
