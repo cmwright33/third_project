@@ -29,13 +29,10 @@ border: 1px solid black; /*Add 1px solid border, use any color you want*/
     color: white;
     border: 1px solid #2e6ab1;
   }
-  .paginatio a {
+  .pagination a {
     text-decoration: none;
     color: #105cb6;
     border: 1px solid #9aafe5;
-    &:hover, &:focus {
-      color: #000033;
-      border-color: #000033;
     }
 
 .ideaInputForm{
@@ -66,15 +63,12 @@ border: 1px solid black; /*Add 1px solid border, use any color you want*/
 
 ul{
   list-style-type: none;
-  padding:0;
-  margin:0;
 }
 
 ul li
 {
 list-style-type: none;
-padding: 0px;
-margin: 0px;
+
 }
 
 
