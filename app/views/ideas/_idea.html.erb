@@ -3,16 +3,16 @@
 
     <ul>
       <div id="<%= idea.id %>">
-        <div class="span11" style="border-bottom: 1px solid #EEE; ">
+        <div class="span11" id="Idea-Box" style="border-bottom: 1px solid #EEE; ">
 
           <div class="span2">
            <a href="/users/<%=idea.user_id%>"><img src="http://farm6.staticflickr.com/5254/5488146741_b80f4b056a.jpg" class="img-polaroid"></a>
          </div>
-         <div class="span3">
+         <div class="span4">
 
            <h3 ><%=idea.title%> </h3>
          </div>
-         <div class="span4">
+         <div class="span3">
            <h3> Votes: <span><%= idea.votes.count %></span>
             <% if @user_vote_ids.include?(idea.id) %>
             <% else %>
