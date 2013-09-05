@@ -12,14 +12,13 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li><%= link_to('Ideas', ideas_path) %></li>
           <% if user_signed_in? %>
             <li>
             <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
             </li>
             <li>
-              <%= link_to current_user.email , root_path %>
+              <%= link_to current_user.email, users_path %>
             </li>
           <% else %>
             <li>

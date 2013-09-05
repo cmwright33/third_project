@@ -18,6 +18,34 @@ body {
 margin-left: 5%;
 }
 
+#indexTagText{
+
+margin-left: 4%;
+background-color: white;
+padding-left: 4%;
+padding-right: 5%;
+list-style: none;
+width: 200px;
+border-radius: 2px;
+}
+
+ #indexTagIdeas{
+  float: right;
+  margin-right: 10%;
+  margin-left: 4%;
+  background-color: white;
+  padding-left: 4%;
+  padding-right: 5%;
+  list-style: none;
+  width: 200px;
+  border-radius: 2px;
+ }
+
+#indexTagSearchButton{
+  margin-left: 2%;
+  margin-bottom:3%;
+}
+
 
 #idea-comments{
   margin-left: 25%;
