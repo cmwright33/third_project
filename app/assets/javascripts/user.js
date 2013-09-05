@@ -1,6 +1,3 @@
-
-
-
 $(function () {
 
   $('#submitButton').on('click',function(){
@@ -95,9 +92,7 @@ $(function () {
   $('.voteButton').on('click', function(){
     console.log(this.id);
     var voteIdeaId = this.id.split('_')[1];
-    console.log(this.id);
     var vote = {"id" : voteIdeaId};
-    console.log(voteIdeaId);
     $.ajax({
       url: '/votes',
       dataType: 'script',
@@ -122,5 +117,22 @@ $(function () {
   $('#project-input').hide();
 
 
+  $('#indexTagSearchButton').on('click', function(){
+    var tag = {"name" : $('#indexTagText').val()};
+      $.ajax({
+      url: '/index/tags',
+      dataType: 'script',
+      type: 'get',
+      data: tag
+      }).done(function(data){
+      console.log(data);
+    });
+    $('#indexTagText').val('');
+  });
+
+
+  $('img').on('click', function(){
+
+  })
 
 });
