@@ -18,6 +18,26 @@ body {
 margin-left: 5%;
 }
 
+#tagText{
+margin-left: 15%;
+margin-top: 2%;
+}
+
+.tagSearchBox{
+
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.tagSearchButton{
+margin-bottom: 2%;
+}
+
+#tagIdeaContent{
+margin-left: 4%;
+margin-right: 4%;
+}
+
 #indexTagText{
 
 margin-left: 4%;

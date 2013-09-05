@@ -2,7 +2,7 @@
   <div class="row-fluid">
     <div class="span12">
       <div class="row-fluid">
-          <div class="span3" style="background-color:grey; box-shadow: 10px 10px 5px #888888; border: 1px solid black; border-radius:10px;">
+          <div class="span3" id="idea-container">
            <img src="http://farm6.staticflickr.com/5254/5488146741_b80f4b056a.jpg" class="img-polaroid-profile">
            <div class="bio">
             <h5><%= @user.username %></h5>
@@ -11,11 +11,11 @@
             <h3></h3>
             <p><h5>Bio</h5>Andouille flank brisket shankle meatball pork belly. Pancetta prosciutto chuck meatball, meatloaf</p>
           </div>
-            <div id="tagSearchBox">
+
             Search Your Tags: </br>
             <input id="tagText" class="input-small" type="text" name="tagSearchBox">
             <button class="tagSearchButton" id="tagSearchButton_<%= @user.id %>">Search</button>
-            </div>
+             <div id="tagSearchBox"></div>
 
           </div>
 

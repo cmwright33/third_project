@@ -104,8 +104,14 @@ $(function () {
      $('#project-input').slideToggle("slow");
    });
 
-  $('#project-input').hide();
+  $('#tagSearchButton').on('click', function(){
+    $('#tagSearchBox').slideUp("slow");
+  });
 
+
+
+  $('#project-input').hide();
+  $('#tagSearchBox');
 
   $('#indexTagSearchButton').on('click', function(){
     var tag = {"name" : $('#indexTagText').val()};
