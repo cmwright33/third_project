@@ -27,7 +27,7 @@
         </div>
         <ul>
           <% idea.comments.each do |comment| %>
-          <div class="span9 offset2" id="idea-comments" style="background-color:white; border: 1px solid black; border-radius:5px;">
+          <div class="span9 offset2" id="idea-comments">
             <h6>comment</h6>
             <li><%=comment.content%></li>
             <li><small><cite title="Source Title">--<%=comment.user.email%></cite></small></li>
