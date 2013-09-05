@@ -4,6 +4,13 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
+      t.string :username,           :null => false, :default => ""
+      t.text :bio
+      t.string :github_URL
+      t.binary :profile_image
+      t.references :ideas
+      t.references :comments
+      t.references :votes
 
       ## Recoverable
       t.string   :reset_password_token
@@ -19,14 +26,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
-      t.string :username
-      t.string :github_URL
-      t.string :portfolio_URL
-      t.text :bio
-      t.binary :profile_image
-      t.references :ideas
-      t.references :comments
-      t.references :votes
+
 
 
 
