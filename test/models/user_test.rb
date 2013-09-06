@@ -6,6 +6,29 @@ class UserTest < ActiveSupport::TestCase
   # end
 
 
+  before do
+    @user = User.new(username: "Example User", email: "user@example.com",
+                     password: "foobar", password_confirmation: "foobar")
+    end
+
+    describe "name" do
+      before { @user.username="test" }
+      it { should be_valid }
+    end
+
+  describe User do
+
+    before(:each) do
+      @attr = { :username => "ExampleUser",
+                :email => "user@example.com",
+                :password => 'test1234',
+              }
+      end
+
+    it "should create a new instance given valid attributes" do
+      User.create!(@attr)
+    end
+  end
 
     describe User do
     it "orders in descending order" do
@@ -30,7 +53,8 @@ class UserTest < ActiveSupport::TestCase
 
 
   describe User do
-    it "creates a new idea"
+    it "c" do
 
+    end
   end
 end
