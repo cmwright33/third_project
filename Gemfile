@@ -77,3 +77,6 @@ end
 
 gem 'will_paginate', '~> 3.0'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
