@@ -9,10 +9,16 @@
  */
 
 
-body {
-  background: #0094CC;
+
+
+html {
+  background-color: #FFFFFF;
 }
 
+
+body {
+  background-color: #FFFFFF;
+}
 
 
 #tags-box{
@@ -152,11 +158,11 @@ padding: 6px
 
 
 .voteButton {
-  background:url(plus5.png);
+  background:url(vote32.png);
   border: none;  /* If your icon IS the button */
   color: transparent;  /* If you don't want the button text to show up */
-  height: 16px;
-  width: 16px;
+  height: 32px;
+  width: 32px;
 }
 .voteButton:hover {
   background-color: black;

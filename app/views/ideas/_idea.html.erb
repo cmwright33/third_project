@@ -12,7 +12,7 @@
 
            <h3 ><%=idea.title%> </h3>
          </div>
-         <div class="span3">
+         <div class="span4">
            <h3> Votes: <span><%= idea.votes.count %></span>
             <% if @user_vote_ids.include?(idea.id) %>
             <% else %>
@@ -29,7 +29,7 @@
           <div class="stats">
 
             <p><%=idea.content%></p>
-            <small><cite>created at <%=idea.created_at%></cite></small>
+            <small style="margin-left: 50%;"><cite>created at <%=idea.created_at%></cite></small>
           </div>
         </div>
         <div class="span9 offset2" id="idea-comments"style="background-color:white; border: 1px solid black; border-radius:5px;">
