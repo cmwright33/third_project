@@ -22,6 +22,7 @@ ThirdProject::Application.routes.draw do
   get '/user/tags', to: 'tags#user_show'
 
   root :to => "welcome#index"
+  mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 end
 
 

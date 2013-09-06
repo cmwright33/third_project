@@ -18,6 +18,12 @@ group :development do
 end
 
 group :development, :test do
+  gem 'jasmine'
+  gem 'jasmine-rails'
+  gem 'jasmine-headless-webkit'
+end
+
+group :development, :test do
   gem 'pry-rails'           # Causes rails console to open pry
                             # https://github.com/rweng/pry-rails
   gem 'pry-debugger'        # Adds step, next, finish, and continue commands and breakpoints
