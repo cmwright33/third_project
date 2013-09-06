@@ -11,13 +11,11 @@
 
 
 
-html {
-  background-color: #FFFFFF;
-}
+
 
 
 body {
-  background-color: #FFFFFF;
+  background: #afcfff;
 }
 
 
@@ -433,7 +431,6 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
 }
 
 a {
