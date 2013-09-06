@@ -1,5 +1,10 @@
 $(function () {
 
+  //allows to toggle
+  $('ol').hide();
+  $('.mainIdeaDiv ul div').hide();
+
+  //saving a new idea and prepending to the profile page
   $('#submitButton').on('click',function(){
     var idea = {
       "title" : $('#title').val(),
@@ -29,12 +34,26 @@ $(function () {
     $('#github-url').val('');
   });
 
+  //adding slide functionality to comments on the index page
+  $('.indexCommentButton').on('click', function(){
+    var indexIdeaId = this.id.split('_')[1];
+    $('#'+indexIdeaId+' ol').slideToggle("slow");
+  });
+
+
+    //adding slide functionality to comments on the individual user pages
+  $('.profileCommentButton').on('click', function(){
+    var profileIdeaId = this.id.split('_')[1];
+    // $('#idea_comments_'+profileIdeaId)
+    $('#'+profileIdeaId+' ul div').slideToggle("slow");
+  });
+
 
   //when commenting on a user's profile page
   $('.userCommentButton').on('click', function(){
-    ideaId = this.id / 2;
+    var ideaId = this.id.split('_')[1];
     console.log(ideaId);
-    text = $('#comment').val();
+    text = $('#profileCommentBox_'+ideaId).val();
     console.log(text);
     var comment = {"content" : text,
                    "ideaId" : ideaId
@@ -50,9 +69,9 @@ $(function () {
     var li = '<li>' + text + '</li>';
     var div = '<div class="span9 offset2" id="idea-comments">'+li+'</div>';
     // var liSmall = '<li><small><cite title="Source Title">'+data.user.email+'<li><small><cite title="Source Title">';
-    $('#'+ ideaId +' ul').prepend(div);
+    $('#'+ ideaId +' ul').first().prepend(div);
     });
-    $('#comment').val('');
+    $('#profileCommentBox_'+ideaId).val('');
   });
 
 
@@ -79,6 +98,7 @@ $(function () {
   });
 
 
+  //for voting on the index page
   $('.voteButton').on('click', function(){
     console.log(this.id);
     var voteIdeaId = this.id.split('_')[1];
@@ -94,6 +114,8 @@ $(function () {
     $('#vote_'+voteIdeaId).remove();
   });
 
+
+  //hiding and showing gitHub URL on profile page for entering a project
   $('input[name=idea]').on('click', function(){
      $('input[name=project]').attr('checked',false);
      $('#project-input').slideUp("slow");
@@ -107,6 +129,7 @@ $(function () {
   $('#project-input').hide();
 
 
+  //searching by tag on the index page
   $('#indexTagSearchButton').on('click', function(){
     var tag = {"name" : $('#indexTagText').val()};
       $.ajax({
@@ -121,6 +144,7 @@ $(function () {
   });
 
 
+  //searching by tag on the profile or show page
   $('.tagSearchButton').on('click', function(){
     var userTagId = this.id.split('_')[1];
     console.log(userTagId);
@@ -142,7 +166,6 @@ $(function () {
 
 
   $('img').on('click', function(){
-
   });
 
 });
