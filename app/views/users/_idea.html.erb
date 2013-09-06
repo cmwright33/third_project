@@ -6,15 +6,15 @@
         <div class="span12" id="idea-container">
           <div id="<%= idea.id %>" class="mainIdeaDiv">
            <div class="span11" style="border-bottom: 1px solid #EEE;" >
-            <div class="span3">
+            <div class="span4">
 
               <h3 ><%=idea.title%></h3>
 
             </div>
-            <div class="span3" id="vote-totals">
+            <div class="span4" id="vote-totals">
              <h3>Votes: <%= idea.votes.count %></h3>
            </div>
-           <div class="span2" id="tags-box">
+           <div class="span3" id="tags-box">
              <h4>Tag: <%= idea.tags.first.name %></h4>
            </div>
          </div>
