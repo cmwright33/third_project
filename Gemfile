@@ -8,6 +8,7 @@ gem 'devise'
 gem 'github_api'
 
 group :production do
+  gem 'rails_12factor'
   gem 'pg'
 end
 
@@ -74,3 +75,4 @@ end
 
 
 gem 'will_paginate', '~> 3.0'
+
