@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -82,3 +83,6 @@ end
 
 gem 'will_paginate', '~> 3.0'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
