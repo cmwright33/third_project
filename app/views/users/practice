@@ -1,0 +1,2 @@
+
+id="idea_comments_<%= idea.id %>"

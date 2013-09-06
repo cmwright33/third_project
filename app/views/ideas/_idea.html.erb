@@ -44,6 +44,7 @@
             </div>
             <% end %>
           </ol>
+            <button id="indexCommentButton_<%= idea.id %>" class="indexCommentButton">See comments</button>
           <div id="commentBox">
             Add comment: <input id="mainComment<%= idea.id %>" type="text" name="comment" style="margin-top:1%;">
             <button id="<%= idea.id * 2 %>" class="mainCommentButton">submit</button>

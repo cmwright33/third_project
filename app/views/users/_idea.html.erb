@@ -4,9 +4,10 @@
       <ul id="<%= @user.id %>">
         <% @user_ideas.each do |idea| %>
         <div class="span12" id="idea-container">
-          <div id="<%= idea.id %>">
-           <div class="span11" id="Idea-Box" style="border-bottom: 1px solid #EEE;" >
-            <div class="span4">
+          <div id="<%= idea.id %>" class="mainIdeaDiv">
+           <div class="span11" style="border-bottom: 1px solid #EEE;" >
+            <div class="span3">
+
               <h3 ><%=idea.title%></h3>
 
             </div>
@@ -34,8 +35,10 @@
             </ul>
           </div>
           <% end %>
-          <input id="comment" type="text" name="comment" placeholder="add a comment">
-          <button id="<%= idea.id * 2 %>" class="userCommentButton">submit</button>
+
+          <button id="profileCommentButton_<%= idea.id %>" class="profileCommentButton">See comments</button></br>
+          <input id="profileCommentBox_<%= idea.id %>" type="text" name="comment" placeholder="add a comment">
+          <button id="profileCommentButton_<%= idea.id %>" class="userCommentButton">submit</button>
         </ul>
         </div>
       </div>
