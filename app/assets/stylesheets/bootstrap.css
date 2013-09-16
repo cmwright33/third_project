@@ -88,7 +88,6 @@ border-radius: 2px;
 
 #idea-comments{
   margin-left: 25%;
-  background-color:white;
   border-radius:5px;
   margin-bottom: 1%;
   list-style-type: none;
@@ -146,9 +145,8 @@ border-radius: 2px;
 
 .stats {
 margin-top: 1%;
-background-color: #40ACD4;
+background-color: white;
 text-align: left;
-border: 1px solid grey;
 border-radius: 3px;
 margin-bottom: 1%;
 padding: 6px
@@ -170,7 +168,7 @@ padding: 6px
 .individual-idea-container{
   position: relative;
   background-color: #5fd2fc;
-  box-shadow: 10px 10px 5px #888888;
+ /* box-shadow: 10px 10px 5px #888888;*/
   border-radius:10px;
   padding-bottom: 10px;
   margin-bottom: 15px;
@@ -191,8 +189,8 @@ padding: 6px
 
 #idea-container div .span12{
   position: relative;
-  background-color: #5fd2fc;
-  box-shadow: 10px 10px 5px #888888;
+  background-color: #F2F2F2;
+ /* box-shadow: 10px 10px 5px #888888;*/
   border-radius:10px;
   padding-bottom: 10px;
   margin-bottom: 15px;
@@ -201,8 +199,8 @@ padding: 6px
 
 #idea-container div .span10{
   position: relative;
-  background-color: #5fd2fc;
-  box-shadow: 10px 10px 5px #888888;
+  background-color: #F2F2F2;
+  /*box-shadow: 10px 10px 5px #888888;*/
   border-radius:10px;
   padding-bottom: 10px;
   margin-bottom: 15px;
