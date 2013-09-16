@@ -29,7 +29,7 @@
           <div class="stats">
 
             <p><%=idea.content%></p>
-            <small style="margin-left: 50%;"><cite>created at <%=idea.created_at%></cite></small>
+            <small style="margin-left: 70%;"><cite>created at <%=idea.created_at.to_formatted_s(:short)%></cite></small>
           </div>
         </div>
         <div class="span9 offset2" id="idea-comments"style="background-color:white; border-radius:5px; border:none;">
@@ -39,7 +39,7 @@
             <div id="comment_<%= comment.id %>">
               <li><%=comment.content%></li>
               <ul>
-                <li><small><cite class="usernameComment" id="comment.user.username" title="Source Title">--<a href="users/<%=comment.user.id%>"><%= comment.user.email %>, created at (<%=comment.created_at%>)</a></cite></small></li>
+                <li style="margin-left: 40%;"><small><cite class="usernameComment" id="comment.user.username" title="Source Title">--<a href="users/<%=comment.user.id%>"><%= comment.user.username %>, created this at <%=comment.created_at.to_formatted_s(:short)%></a></cite></small></li>
               </ul>
             </div>
             <% end %>
