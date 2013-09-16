@@ -3,6 +3,7 @@ $(function () {
   //allows to toggle
   $('ol').hide();
   $('.mainIdeaDiv ul div').hide();
+  $('#ideaInputForm').hide();
 
   //saving a new idea and prepending to the profile page
   $('#submitButton').on('click',function(){
@@ -117,13 +118,18 @@ $(function () {
 
   //hiding and showing gitHub URL on profile page for entering a project
   $('input[name=idea]').on('click', function(){
-     $('input[name=project]').attr('checked',false);
-     $('#project-input').slideUp("slow");
+    $('input[name=project]').attr('checked',false);
+    $('#project-input').slideUp("slow");
    });
 
   $('input[name=project]').on('click', function(){
-     $('input[name=idea]').attr('checked',false);
-     $('#project-input').slideToggle("slow");
+    $('input[name=idea]').attr('checked',false);
+    $('#project-input').slideToggle("slow");
+   });
+
+
+  $('#profileIdeaHeader').on('click', function(){
+    $('#ideaInputForm').slideToggle("slow");
    });
 
 
