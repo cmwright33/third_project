@@ -28,7 +28,7 @@
         <ul>
           <% idea.comments.each do |comment| %>
 
-          <div class="span9 offset2" id="idea-comments" style="background-color:white; border: 1px solid black; border-radius:5px;">
+          <div class="span9 offset2" id="idea-comments" style="background-color:white; border:none; border-radius:5px;">
             <li><%=comment.content%></li>
             <ul>
               <li style="margin-left: 20%;"><small><cite class="usernameComment" id="comment.user.username" title="Source Title">--<a href="/users/<%=comment.user.id%>"><%= comment.user.username %></a>, created at select_datetime(<%=comment.created_at%>)</cite></small></li>
