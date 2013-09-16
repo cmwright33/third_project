@@ -72,3 +72,21 @@ list-style-type: none;
   background-color: #0099FF;
   cursor: pointer;
 }
+
+
+.profileCommentButton {
+  background:url(arrow_down.png) no-repeat center center;
+  border: none;  /* If your icon IS the button */
+  color: transparent;  /* If you don't want the button text to show up */
+  height: 32px;
+  width: 32px;
+}
+.profileCommentButton:hover {
+  background-color: black;
+}
+
+#userIdeaTitle {
+font-size: 2.5rem;
+margin-bottom: 1.5rem;
+line-height: 1.25;
+}

@@ -8,7 +8,7 @@
            <div class="span11" style="border-bottom: 1px solid #EEE;" >
             <div class="span4">
 
-              <h3 ><%=idea.title%></h3>
+              <h3 class="userIdeaTitle"><%=idea.title%></h3>
 
             </div>
             <div class="span4" id="vote-totals">
@@ -35,10 +35,10 @@
             </ul>
           </div>
           <% end %>
-
-          <button id="profileCommentButton_<%= idea.id %>" class="profileCommentButton">See comments</button></br>
           <input id="profileCommentBox_<%= idea.id %>" type="text" name="comment" placeholder="add a comment">
           <button id="profileCommentButton_<%= idea.id %>" class="userCommentButton">submit</button>
+          <button id="profileCommentButton_<%= idea.id %>" class="profileCommentButton">See comments</button></br>
+          <div>
         </ul>
         </div>
       </div>
