@@ -5,7 +5,7 @@
         <% @user_ideas.each do |idea| %>
         <div class="span12" id="idea-container">
           <div id="<%= idea.id %>" class="mainIdeaDiv">
-           <div class="span11" style="border-bottom: 1px solid #EEE;" >
+           <div class="span11" style="border-bottom: 1px solid #EEE; margin-left:1%;" >
             <div class="span4">
 
               <h3 class="userIdeaTitle"><%=idea.title%></h3>
@@ -21,17 +21,17 @@
          <div class="span11">
           <div class="stats">
             <p><%= idea.content %></p>
-            <small style="margin-left: 50%;"><cite>created at <%=idea.created_at%></cite></small>
+            <small style="margin-left: 70%;"><cite>created at <%=idea.created_at.to_formatted_s(:short)%></cite></small>
           </div>
         </div>
         <div clas="span11">
         <ul>
           <% idea.comments.each do |comment| %>
 
-          <div class="span9 offset2" id="idea-comments" style="background-color:white; border: 1px solid black; border-radius:5px;">
+          <div class="span9 offset2" id="idea-comments" style="background-color:white; border:none; border-radius:5px;">
             <li><%=comment.content%></li>
             <ul>
-              <li style="margin-left: 20%;"><small><cite class="usernameComment" id="comment.user.username" title="Source Title">--<a href="/users/<%=comment.user.id%>"><%= comment.user.username %></a>, created at select_datetime(<%=comment.created_at%>)</cite></small></li>
+              <li style="margin-left: 50%;"><small><cite class="usernameComment" id="comment.user.username" title="Source Title">--<a href="/users/<%=comment.user.id%>"><%= comment.user.username %></a>, created this at <%=comment.created_at.to_formatted_s(:short)%></cite></small></li>
             </ul>
           </div>
           <% end %>

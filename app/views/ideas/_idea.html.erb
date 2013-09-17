@@ -1,9 +1,9 @@
-<div class="row-fluid">
+<div class="row-fluid" id="idea-container">
   <div class="span12">
 
     <ul>
       <div id="<%= idea.id %>">
-        <div class="span11" id="Idea-Box" style="border-bottom: 1px solid #EEE; ">
+        <div class="span11" id="Idea-Box" style="border-bottom: 1px solid #EEE; margin-left: 1%;">
 
           <div class="span2">
            <a href="/users/<%=idea.user_id%>"><img src="http://farm6.staticflickr.com/5254/5488146741_b80f4b056a.jpg" class="img-polaroid"></a>
@@ -29,17 +29,17 @@
           <div class="stats">
 
             <p><%=idea.content%></p>
-            <small style="margin-left: 50%;"><cite>created at <%=idea.created_at%></cite></small>
+            <small style="margin-left: 70%;"><cite>created at <%=idea.created_at.to_formatted_s(:short)%></cite></small>
           </div>
         </div>
-        <div class="span9 offset2" id="idea-comments"style="background-color:white; border: 1px solid black; border-radius:5px;">
+        <div class="span9 offset2" id="idea-comments"style="background-color:white; border-radius:5px; border:none;">
           <ol>
             <% idea.comments.each do |comment| %>
             <% counter = 0 %>
             <div id="comment_<%= comment.id %>">
               <li><%=comment.content%></li>
               <ul>
-                <li><small><cite class="usernameComment" id="comment.user.username" title="Source Title">--<a href="users/<%=comment.user.id%>"><%= comment.user.email %>, created at (<%=comment.created_at%>)</a></cite></small></li>
+                <li style="margin-left: 40%;"><small><cite class="usernameComment" id="comment.user.username" title="Source Title">--<a href="users/<%=comment.user.id%>"><%= comment.user.username %>, created this at <%=comment.created_at.to_formatted_s(:short)%></a></cite></small></li>
               </ul>
             </div>
             <% end %>
