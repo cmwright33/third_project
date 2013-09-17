@@ -434,7 +434,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: Gudea, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Volkhov, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -957,7 +957,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: Gudea, serif;
+  font-family: Volkhov, serif;
   font-weight: bold;
   line-height: 20px;
   color: inherit;
