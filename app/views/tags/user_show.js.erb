@@ -3,7 +3,7 @@
   var ul = '<ul></ul>';
   var li = '<li class="tagIdeaTitle" id="ideaTitle_<%=idea.id%>">'+'<%= idea.title %>'+'</li>';
   var p = '<p class="tagIdeaContent" id="ideaContent_<%=idea.id%>">'+'<%= idea.content %>'+'</p>'
-  var a = '<a href="/users/<%=idea.user.id%>">idea.user.username</a>'
+  var a = '<a href="/users/<%=idea.user.id%>">created by <%=idea.user.username%></a>'
   $('#tagSearchBox').append(div).append(p).append(a);
 <% end %>
 
