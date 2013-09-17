@@ -163,7 +163,7 @@ padding: 6px
   width: 32px;
 }
 .voteButton:hover {
-  background-color: black;
+  background-color: #0099FF;
 }
 
 #sign-in-out,
