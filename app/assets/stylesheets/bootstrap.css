@@ -14,13 +14,9 @@
 
 
 
-body {
-  background: #afcfff;
-}
 
-h3 {
-  font-family: Helvetica;
-}
+
+
 
 #tags-box{
 
@@ -41,10 +37,15 @@ margin-left: 15%;
 margin-top: 2%;
 }
 
-.tagSearchBox{
+#tagSearchBox{
+background-color: #F2F2F2;
+border-radius: 2px;
+padding-left: 4%;
+padding-right: 5%;
+}
 
-  margin-left: 5%;
-  margin-right: 5%;
+#tagSearchBox a{
+  margin-left: 42%;
 }
 
 .tagSearchButton{
@@ -68,16 +69,21 @@ border-radius: 2px;
 }
 
  #indexTagIdeas{
-  float: right;
+  text-align: left;
   margin-right: 10%;
   margin-left: 4%;
-  background-color: white;
+  background-color: #F2F2F2;
   padding-left: 4%;
   padding-right: 5%;
   list-style: none;
   width: 200px;
   border-radius: 2px;
  }
+
+ #indexTagIdeas a{
+  margin-left: 42%;
+ }
+
 
 #indexTagSearchButton{
   margin-left: 2%;
@@ -428,7 +434,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Volkhov, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -951,7 +957,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: Helvetica;
+  font-family: Volkhov, serif;
   font-weight: bold;
   line-height: 20px;
   color: inherit;
@@ -1277,7 +1283,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Gudea,"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 label {
