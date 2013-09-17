@@ -2,7 +2,6 @@ $('#indexTagIdeas div').remove();
 $('#indexTagIdeas a').remove();
 <% @tag.first.ideas.each do |idea| %>
   var div = '<div class="tagSearchList"><ul><li class="tagIdeaTitle" id="ideaTitle_<%=idea.id%>">'+'<%= idea.title %>'+'</li></ul></div>';
-  var ul = '<ul></ul>';
   var li = '<li class="tagIdeaTitle" id="ideaTitle_<%=idea.id%>">'+'<%= idea.title %>'+'</li>';
   var p = '<p class="tagIdeaContent" id="ideaContent_<%=idea.id%>">'+'<%= idea.content %>'+'</p>'
   var a = '<a href="/users/<%=idea.user.id%>">created by <%=idea.user.username%></a>'
