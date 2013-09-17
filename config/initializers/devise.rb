@@ -8,6 +8,7 @@ Devise.setup do |config|
 
   config.secret_key = '5db76a7654eb8f0e5115ec706e5ea79a1c84b50631aa83320d49abe676bbc6ac6e47ada18edd8b295ceaa532bbb4ec8a806746ad3a0b656ee60c58642455cf46'
 
+
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 

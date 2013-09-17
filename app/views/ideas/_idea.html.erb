@@ -8,21 +8,24 @@
           <div class="span2">
            <a href="/users/<%=idea.user_id%>"><img src="http://farm6.staticflickr.com/5254/5488146741_b80f4b056a.jpg" class="img-polaroid"></a>
          </div>
-         <div class="span4">
+         <div class="span8">
 
            <h3 ><%=idea.title%> </h3>
          </div>
-         <div class="span4">
-           <h3> Votes: <span><%= idea.votes.count %></span>
+
+          <div class="span8">
+            <h4>  Tag: <%= idea.tags.first.name %></h4>
+          </div>
+
+         <div class="span3" >
+           <h4> Votes: <span><%= idea.votes.count %></span>
             <% if @user_vote_ids.include?(idea.id) %>
             <% else %>
-            <button id="vote_<%= idea.id %>" class="voteButton">Vote</button></h3>
+            <button id="vote_<%= idea.id %>" class="voteButton">Vote</button></h4>
             <% end %>
 
           </div>
-          <div class="span3">
-            <h5>  Tag: <%= idea.tags.first.name %></h5>
-          </div>
+
 
         </div>
         <div class="span11">
