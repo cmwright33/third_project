@@ -7,33 +7,29 @@ $(function () {
 
   //saving a new idea and prepending to the profile page
   $('#submitButton').on('click',function(){
+    var title = $('#title').val(),
+        content = $('#content').val(),
+        tag = $('#tag').val(),
+        github_repo = $('#github-url').val();
+
     var idea = {
-      "title" : $('#title').val(),
-      "content" : $('#content').val(),
-      "tag" : $('#tag').val(),
-      "github_repo" : $('#github-url').val()
+        "title" : title,
+        "content" : content,
+        "tag" : tag,
+        "github_repo" : github_repo
       };
     $.ajax({
-      url: '/save/idea',
-      dataType: 'json',
-      type: 'post',
-      data: idea
+        url: '/save/idea',
+        dataType: 'script',
+        type: 'post',
+        data: idea
     }).done(function(data){
       console.log(data);
-      var div = $('<div id=" '+ data.id +' "></div>').addClass("individual-idea-container");
-      var li = '<h3><li>'+ data.title +'</li></h3>';
-      var li2 = $('<li>' + data.content +'</li>').addClass("stats");
-      var li3 = $('<li><li>').attr('id', 'idea-comments');
-      var input = '<input id="comment" type="text" name="comment" placeholder="add a comment">';
-      var button = '<button id=" '+ data.id * 2 +' " class="commentButton">submit</button>';
-      var ideaForm = div.append(li).append(li2).append(li3).append(input).append(button).css("list-style-type", "none");
-      $('#' + data.user_id).prepend(ideaForm);
     });
-    $('#title').val('');
+    $('#ideaInputForm').find("input[type=text]").val('');
     $('#content').val('');
-    $('#tag').val('');
-    $('#github-url').val('');
   });
+
 
   //adding slide functionality to comments on the index page
   $('.indexCommentButton').on('click', function(){
@@ -61,10 +57,10 @@ $(function () {
                   };
     console.log(comment);
     $.ajax({
-    url: '/comments',
-    dataType: 'json',
-    type: 'post',
-    data: comment
+      url: '/comments',
+      dataType: 'json',
+      type: 'post',
+      data: comment
     }).done(function(data){
     console.log(data);
     var li = '<li>' + text + '</li>';
@@ -86,10 +82,10 @@ $(function () {
                   };
     console.log(comment);
     $.ajax({
-    url: '/comments',
-    dataType: 'json',
-    type: 'post',
-    data: comment
+      url: '/comments',
+      dataType: 'json',
+      type: 'post',
+      data: comment
     }).done(function(data){
     console.log(data);
     var li = '<li>' + text + '</li>';
@@ -141,10 +137,10 @@ $(function () {
   $('#indexTagSearchButton').on('click', function(){
     var tag = {"name" : $('#indexTagText').val()};
       $.ajax({
-      url: '/index/tags',
-      dataType: 'script',
-      type: 'get',
-      data: tag
+        url: '/index/tags',
+        dataType: 'script',
+        type: 'get',
+        data: tag
       }).done(function(data){
       console.log(data);
     });
@@ -161,10 +157,10 @@ $(function () {
               };
       console.log(tag);
       $.ajax({
-      url: '/user/tags',
-      dataType: 'script',
-      type: 'get',
-      data: tag
+        url: '/user/tags',
+        dataType: 'script',
+        type: 'get',
+        data: tag
       }).done(function(data){
       console.log(data);
     });
