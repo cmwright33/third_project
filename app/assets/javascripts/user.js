@@ -20,14 +20,6 @@ $(function () {
       data: idea
     }).done(function(data){
       console.log(data);
-      var div = $('<div id=" '+ data.id +' "></div>').addClass("individual-idea-container");
-      var li = '<h3><li>'+ data.title +'</li></h3>';
-      var li2 = $('<li>' + data.content +'</li>').addClass("stats");
-      var li3 = $('<li><li>').attr('id', 'idea-comments');
-      var input = '<input id="comment" type="text" name="comment" placeholder="add a comment">';
-      var button = '<button id=" '+ data.id * 2 +' " class="commentButton">submit</button>';
-      var ideaForm = div.append(li).append(li2).append(li3).append(input).append(button).css("list-style-type", "none");
-      $('#' + data.user_id).prepend(ideaForm);
     });
     $('#title').val('');
     $('#content').val('');

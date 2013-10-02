@@ -1,4 +1,14 @@
-alert('hello');
+console.log('hello');
+console.log('<%=@idea%>');
+
+var div = $('<div id=" '+<%=@idea.id%>  +' "></div>').addClass("individual-idea-container");
+var li = '<h3><li>'+ <%=@idea.title%> +'</li></h3>';
+var li2 = $('<li>' + <%=@idea.content%> +'</li>').addClass("stats");
+var li3 = $('<li><li>').attr('id', 'idea-comments');
+var input = '<input id="comment" type="text" name="comment" placeholder="add a comment">';
+var button = '<button id="'+ <%=@idea.id%> * 2 +'" class="commentButton">submit</button>';
+var ideaForm = div.append(li).append(li2).append(li3).append(input).append(button).css("list-style-type", "none");
+$('#' +<%=@idea.user_id%>).prepend(ideaForm);
 
 
 
