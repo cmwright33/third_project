@@ -15,7 +15,7 @@ $(function () {
       };
     $.ajax({
       url: '/save/idea',
-      dataType: 'json',
+      dataType: 'script',
       type: 'post',
       data: idea
     }).done(function(data){

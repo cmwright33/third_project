@@ -28,7 +28,8 @@ class IdeasController < ApplicationController
     @idea.save
     current_user.ideas << @idea
     respond_to do |format|
-      format.json {render json: @idea}
+      format.html
+      format.js
     end
   end
 
