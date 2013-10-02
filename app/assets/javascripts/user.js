@@ -21,10 +21,8 @@ $(function () {
     }).done(function(data){
       console.log(data);
     });
-    $('#title').val('');
+    $('#ideaInputForm').find("input[type=text]").val('');
     $('#content').val('');
-    $('#tag').val('');
-    $('#github-url').val('');
   });
 
   //adding slide functionality to comments on the index page
